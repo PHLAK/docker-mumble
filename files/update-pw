@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+${MUMBLE_DIR}/murmur.x86 -ini ${CONFIG_DIR}/config.ini -readsupw
