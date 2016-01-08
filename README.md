@@ -10,7 +10,7 @@ Docker container for Mumble server.
 
 First create a data-only container to hold the persistent config data:
 
-    docker run --name mumble-data phlak/mumble echo "Data-only container for Mumble server"
+    docker create --name mumble-data phlak/mumble echo "Data-only container for Mumble server"
 
 Then run the Mumble server:
 
@@ -27,7 +27,7 @@ After starting your container, you can get the randomly generated SuperUser pass
 
 Manually set a new SuperUser password with:
 
-    docker exec -it mumble-server /srv/scripts/update-pw
+    docker exec -it mumble-server supw
 
 **NOTE:** This can be run at any time to update the SuperUser password
 
