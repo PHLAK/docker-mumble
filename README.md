@@ -8,13 +8,21 @@ Docker container for Mumble server.
 
 ### Running the container
 
-First create a data-only container to hold the persistent config data:
+In order to persist configuration data when upgrading your running server container you should
+create a data-only container. This is not required but is _highly_ recommended.
 
     docker create --name mumble-data phlak/mumble echo "Data-only container for Mumble server"
 
-Then run the Mumble server:
+After the data-only container has been created run your server container with shared volumes from
+the data-only container:
 
-    docker run -d -p 64738:64738 -p 64738:64738/udp --volumes-from mumble-data --restart=always --name mumble-server phlak/mumble
+    docker run -d -p 64738:64738 -p 64738:64738/udp --volumes-from mumble-data --name mumble-server phlak/mumble
+
+
+##### Optional 'docer run' arguments
+
+`--restart=always` - Always restart the container regardless of the exit status. See the Docker
+                     [restart policies](https://goo.gl/OI87rA) for additional details.
 
 
 ##### Get/set the SuperUser password
@@ -38,7 +46,9 @@ Once you have a running container, you can edit the config with:
 
     docker exec -it mumble-server vi /srv/mumble/config.ini
 
-After saving changes, restart your container with `docker restart mumble-server`
+After saving changes, restart your container:
+
+    docker restart mumble-server
 
 
 -----
