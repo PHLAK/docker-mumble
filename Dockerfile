@@ -2,7 +2,7 @@ FROM alpine:3.3
 MAINTAINER Chris Kankiewicz <Chris@ChrisKankiewicz.com>
 
 # Define Mumble version
-ENV MUMBLE_VERSION 1.2.12
+ENV MUMBLE_VERSION 1.2.13
 
 # Create Mumble directories
 RUN mkdir -pv /opt/mumble /etc/mumble
