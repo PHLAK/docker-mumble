@@ -11,8 +11,8 @@ RUN mkdir -pv /opt/mumble /etc/mumble
 COPY files/config.ini /etc/mumble/config.ini
 
 # Copy SuperUser password update script
-COPY files/supw /bin/supw
-RUN chmod +x /bin/supw
+COPY files/supw /usr/local/bin/supw
+RUN chmod +x /usr/local/bin/supw
 
 # Set the bzip archive URL
 ENV BZIP_URL https://github.com/mumble-voip/mumble/releases/download/${MUMBLE_VERSION}/murmur-static_x86-${MUMBLE_VERSION}.tar.bz2
