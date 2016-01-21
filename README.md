@@ -1,7 +1,7 @@
 docker-mumble
 =============
 
-Docker container for Mumble server.
+Docker image for Mumble server.
 
 [![](https://badge.imagelayers.io/phlak/mumble:latest.svg)](https://imagelayers.io/?images=phlak/mumble:latest 'Get your own badge on imagelayers.io')
 
