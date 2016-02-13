@@ -8,15 +8,15 @@ Docker image for Mumble server.
 
 ### Running the container
 
-In order to persist configuration data when upgrading your running server container you should
-create a data-only container. This is not required but is _highly_ recommended.
+In order to persist configuration data when upgrading your container you should create a named data
+volume. This is not required but is _highly_ recommended.
 
-    docker create --name mumble-data phlak/mumble echo "Data-only container for Mumble server"
+    docker volume create --name mumble-data
 
 After the data-only container has been created run your server container with shared volumes from
 the data-only container:
 
-    docker run -d -p 64738:64738 -p 64738:64738/udp --volumes-from mumble-data --name mumble-server phlak/mumble
+    docker run -d -p 64738:64738 -p 64738:64738/udp -v mumble-data:/etc/mumble --name mumble-server phlak/mumble
 
 
 ##### Optional 'docer run' arguments
