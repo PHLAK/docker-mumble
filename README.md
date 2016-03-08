@@ -2,6 +2,8 @@ docker-mumble
 =============
 
 Docker image for Mumble server.
+Forked from /phlak
+Maintained and adjusted by Gymnae
 
 [![](https://badge.imagelayers.io/phlak/mumble:latest.svg)](https://imagelayers.io/?images=phlak/mumble:latest 'Get your own badge on imagelayers.io')
 
@@ -23,6 +25,8 @@ the data-only container:
 
 `--restart always` - Always restart the container regardless of the exit status. See the Docker
                      [restart policies](https://goo.gl/OI87rA) for additional details.
+                     
+`-e SERVERPASSWORD="<password>"` - Adds a server password to mumble server on start
 
 
 ##### Get/set the SuperUser password
