@@ -2,7 +2,7 @@ docker-mumble
 =============
 
 Docker image for Mumble server.
-Forked from /phlak
+Forked from https://hub.docker.com/r/phlak/mumble/
 Maintained and adjusted by Gymnae
 
 ### Running the container
