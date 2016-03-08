@@ -27,6 +27,9 @@ RUN apk add --update ca-certificates bzip2 tar wget \
 # Expose ports
 EXPOSE 64738 64738/udp
 
+# Server password environemnt
+ENV SERVERPASSWORD=${SERVERPASSWORD:-}
+
 # Set volumes
 VOLUME /etc/mumble
 
