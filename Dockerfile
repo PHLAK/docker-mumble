@@ -1,5 +1,7 @@
+# fork of PHLAK/docker-mumble
+
 FROM alpine:3.3
-MAINTAINER Chris Kankiewicz <Chris@ChrisKankiewicz.com>
+MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # Define Mumble version
 ENV MUMBLE_VERSION 1.2.15
@@ -8,7 +10,7 @@ ENV MUMBLE_VERSION 1.2.15
 RUN mkdir -pv /opt/mumble /etc/mumble
 
 # Copy config file
-COPY files/config.ini /etc/mumble/config.ini
+COPY config/mumble-server.ini /etc/mumble/mumble-server.ini
 
 # Copy SuperUser password update script
 COPY files/supw /usr/local/bin/supw
