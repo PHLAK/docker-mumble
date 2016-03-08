@@ -1,0 +1,3 @@
+#!/usr/bin/env sh
+
+/opt/mumble/murmur.x86/murmur.x86 -ini /etc/mumble/config.ini -readsupw
