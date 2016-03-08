@@ -5,9 +5,6 @@ Docker image for Mumble server.
 Forked from /phlak
 Maintained and adjusted by Gymnae
 
-[![](https://badge.imagelayers.io/phlak/mumble:latest.svg)](https://imagelayers.io/?images=phlak/mumble:latest 'Get your own badge on imagelayers.io')
-
-
 ### Running the container
 
 In order to persist configuration data when upgrading your container you should create a named data
