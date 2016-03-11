@@ -1,0 +1,8 @@
+#!/bin/sh
+
+SERVERPASSWORD=${SERVERPASSWORD:-}
+#insert the password
+sed 's/"REPLACEME"/"$SERVERPASSWORD"/' /etc/mumble/config/mumble-server.ini
+echo 'The password: ' $SERVERPASSWORD
+# start the server
+/opt/mumble/murmur.x86 -fg -ini /etc/mumble/config/mumble-server.ini
