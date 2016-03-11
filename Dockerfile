@@ -1,6 +1,6 @@
 # fork of PHLAK/docker-mumble
 
-FROM gymnae/alpinebase
+FROM gymnae/alpine-base
 MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # Define Mumble version
