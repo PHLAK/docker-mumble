@@ -1,7 +1,8 @@
 #!/bin/sh
 
-#take the password from ENV, if none was delivered, replace with empty string
+#take the password / welcometext from ENV, if none was delivered, replace with empty string
 SERVERPASSWORD=${SERVERPASSWORD:-}
+WELCOMETEXT=${WELCOMETEXT:-}
 
 #insert the password
 sed -i.bak 's/'REPLACEME'/'$SERVERPASSWORD'/g' /etc/mumble/config/mumble-server.ini
