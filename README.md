@@ -3,7 +3,7 @@ docker-mumble
 
 Docker image for Mumble server.
 
-[![](https://badge.imagelayers.io/phlak/mumble:latest.svg)](https://imagelayers.io/?images=phlak/mumble:latest 'Get your own badge on imagelayers.io')
+[![](https://images.microbadger.com/badges/image/phlak/mumble.svg)](http://microbadger.com/#/images/phlak/mumble "Get your own image badge on microbadger.com")
 
 
 ### Running the container
