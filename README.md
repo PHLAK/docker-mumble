@@ -44,7 +44,7 @@ Manually set a new SuperUser password with:
 
 Once you have a running container, you can edit the config with:
 
-    docker exec -it mumble-server vi /srv/mumble/config.ini
+    docker exec -it mumble-server vi /etc/mumble/config.ini
 
 After saving changes, restart your container:
 
