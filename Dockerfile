@@ -4,7 +4,7 @@ FROM gymnae/alpine-base
 MAINTAINER Gunnar Falk <docker@grundstil.de>
 
 # Define Mumble version
-ENV MUMBLE_VERSION 1.2.16
+ENV MUMBLE_VERSION 1.2.17
 
 # Create Mumble directories
 RUN mkdir -pv /opt/mumble && mkdir -pv /etc/mumble/config
