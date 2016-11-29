@@ -7,6 +7,9 @@ ENV MUMBLE_VERSION 1.2.17
 # Create Mumble directories
 RUN mkdir -pv /opt/mumble /etc/mumble
 
+# Create non-root user
+RUN adduser -DHs /sbin/nologin mumble
+
 # Copy config file
 COPY files/config.ini /etc/mumble/config.ini
 
@@ -22,8 +25,14 @@ RUN apk add --update ca-certificates bzip2 tar tzdata wget \
     && wget -qO- ${BZIP_URL} | tar -xjv --strip-components=1 -C /opt/mumble \
     && apk del ca-certificates bzip2 tar wget && rm -rf /var/cache/apk/*
 
+# Chown files
+RUN chown -Rv mumble:mumble /etc/mumble /opt/mumble
+
 # Expose ports
 EXPOSE 64738 64738/udp
+
+# Set running user
+USER mumble
 
 # Set volumes
 VOLUME /etc/mumble
