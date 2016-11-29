@@ -20,13 +20,11 @@ RUN chmod +x /usr/local/bin/supw
 # Set the bzip archive URL
 ENV BZIP_URL https://github.com/mumble-voip/mumble/releases/download/${MUMBLE_VERSION}/murmur-static_x86-${MUMBLE_VERSION}.tar.bz2
 
-# Install dependencies and fetch Mumble bzip archive
+# Install dependencies, fetch Mumble bzip archive and chown files
 RUN apk add --update ca-certificates bzip2 tar tzdata wget \
     && wget -qO- ${BZIP_URL} | tar -xjv --strip-components=1 -C /opt/mumble \
-    && apk del ca-certificates bzip2 tar wget && rm -rf /var/cache/apk/*
-
-# Chown files
-RUN chown -Rv mumble:mumble /etc/mumble /opt/mumble
+    && apk del ca-certificates bzip2 tar wget && rm -rf /var/cache/apk/* \
+    && chown -R mumble:mumble /etc/mumble /opt/mumble
 
 # Expose ports
 EXPOSE 64738 64738/udp
