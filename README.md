@@ -13,8 +13,7 @@ volume. This is not required but is _highly_ recommended.
 
     docker volume create --name mumble-data
 
-After the data-only container has been created run your server container with shared volumes from
-the data-only container:
+After the data volume has been created run the server container with the named data volume:
 
     docker run -d -p 64738:64738 -p 64738:64738/udp -v mumble-data:/etc/mumble --name mumble-server phlak/mumble
 
