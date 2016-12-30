@@ -2,7 +2,7 @@ FROM alpine:3.5
 MAINTAINER Chris Kankiewicz <Chris@ChrisKankiewicz.com>
 
 # Define Mumble version
-ENV MUMBLE_VERSION 1.2.18
+ARG MUMBLE_VERSION=1.2.18
 
 # Create Mumble directories
 RUN mkdir -pv /opt/mumble /etc/mumble
@@ -18,7 +18,7 @@ COPY files/supw /usr/local/bin/supw
 RUN chmod +x /usr/local/bin/supw
 
 # Set the bzip archive URL
-ENV BZIP_URL https://github.com/mumble-voip/mumble/releases/download/${MUMBLE_VERSION}/murmur-static_x86-${MUMBLE_VERSION}.tar.bz2
+ARG BZIP_URL=https://github.com/mumble-voip/mumble/releases/download/${MUMBLE_VERSION}/murmur-static_x86-${MUMBLE_VERSION}.tar.bz2
 
 # Install dependencies, fetch Mumble bzip archive and chown files
 RUN apk add --update ca-certificates bzip2 tar tzdata wget \
