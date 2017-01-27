@@ -2,7 +2,7 @@ FROM alpine:3.5
 MAINTAINER Chris Kankiewicz <Chris@ChrisKankiewicz.com>
 
 # Define Mumble version
-ARG MUMBLE_VERSION=1.2.18
+ARG MUMBLE_VERSION=1.2.19
 
 # Create Mumble directories
 RUN mkdir -pv /opt/mumble /etc/mumble
