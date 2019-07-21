@@ -1,4 +1,4 @@
-FROM alpine:3.9
+FROM alpine:3.10
 MAINTAINER Chris Kankiewicz <Chris@ChrisKankiewicz.com>
 
 # Define Mumble version
