@@ -2,7 +2,7 @@ FROM alpine:3.10
 LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 
 # Define Mumble version
-ARG MUMBLE_VERSION=1.2.19
+ARG MUMBLE_VERSION=1.3.0
 
 # Create Mumble directories
 RUN mkdir -pv /opt/mumble /etc/mumble
