@@ -33,7 +33,7 @@ EXPOSE 64738 64738/udp
 
 COPY /init.sh / 
 
-USER mumble-user
+USER mumble-server
 
 # Set volumes
 VOLUME /etc/mumble
