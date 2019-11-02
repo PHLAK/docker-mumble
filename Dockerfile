@@ -9,6 +9,9 @@ ENV MUMBLE_VERSION 1.3.0
 # Create Mumble directories
 RUN mkdir -pv /opt/mumble && mkdir -pv /etc/mumble/config
 
+# add mumble-server user
+RUN adduser -DHs /sbin/nologin mumble-server
+
 # Copy config file
 ADD config/mumble-server.ini /etc/mumble/config/mumble-server.ini
 
@@ -23,9 +26,7 @@ ARG BZIP_URL=https://github.com/mumble-voip/mumble/releases/download/${MUMBLE_VE
 RUN apk add --update ca-certificates bzip2 tar tzdata wget \
     && wget -qO- ${BZIP_URL} | tar -xjv --strip-components=1 -C /opt/mumble \
     && apk del ca-certificates bzip2 tar wget && rm -rf /var/cache/apk/* \
-    && chown -R mumble:mumble /etc/mumble /opt/mumble
-
-RUN adduser -S mumble-server
+    && chown -R mumble-server:mumble-server /etc/mumble /opt/mumble
 
 # Expose ports
 EXPOSE 64738 64738/udp
