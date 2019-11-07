@@ -1,6 +1,11 @@
 docker-mumble
 =============
 
+
+<p align="center">
+    <img src="docker-mumble.png" alt="Docker Mumble" width="500">
+<p>
+
 <p align="center">
   <a href="http://microbadger.com/#/images/phlak/mumble" alt="Microbadger"><img src="https://images.microbadger.com/badges/image/phlak/mumble.svg"></a>
   <a href="https://join.slack.com/t/phlaknet/shared_invite/enQtNzk0ODkwMDA2MDg0LWI4NDAyZGRlMWEyMWNhZmJmZjgzM2Y2YTdhNmZlYzc3OGNjZWU5MDNkMTcwMWQ5OGI5ODFmMjI5OWVkZTliN2M"><img src="https://img.shields.io/badge/Join_our-Slack-611f69.svg" alt="Join our"></a>
