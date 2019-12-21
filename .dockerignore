@@ -1,4 +1,4 @@
 .git
-build.sh
 LICENSE
+Makefile
 README.md
