@@ -1,4 +1,4 @@
-version: "3.7"
+version: "3.3"
 services:
   mumble-server:
     image: phlak/mumble
@@ -6,10 +6,10 @@ services:
     environment:
       - TZ=America/New_York
     ports:
-      -64738:64738
-      -64738:64738/udp
+      - "64738:64738"
+      - "64738:64738/udp"
     volumes:
-      -mumble-data:/etc/mumble
+      - "mumble-data:/etc/mumble"
       
 volumes:
   mumble-data:
