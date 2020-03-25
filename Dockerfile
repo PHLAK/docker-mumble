@@ -4,7 +4,7 @@ LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 # Define Mumble version
 ARG MUMBLE_VERSION=1.3.0
 
-ENV CONFIG_PATH=/etc/mumble/config.ini
+ENV CONFIG_PATH=/etc/mumble/config.ini \
     SUPERUSER_PASSWORD=
 
 # Create Mumble directories
@@ -40,6 +40,4 @@ VOLUME /etc/mumble
 
 # Entrypoint
 COPY entrypoint.sh /app/entrypoint.sh
-ENTRYPOINT ["/app/entrypoint.sh"]
-# Default command args
-CMD ["-fg", "-ini", "$CONFIG_PATH"]
+ENTRYPOINT /app/entrypoint.sh -fg -ini $CONFIG_PATH
