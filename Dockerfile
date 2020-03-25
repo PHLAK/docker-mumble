@@ -41,4 +41,5 @@ VOLUME /etc/mumble
 # Entrypoint
 COPY entrypoint.sh /app/entrypoint.sh
 ENTRYPOINT ["/app/entrypoint.sh"]
+# Default command args
 CMD ["-fg", "-ini", "$CONFIG_PATH"]
