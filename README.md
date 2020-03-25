@@ -28,7 +28,12 @@ volume. This is not required but is _highly_ recommended.
 
 After the data volume has been created run the server container with the named data volume:
 
-    docker run -d -p 64738:64738 -p 64738:64738/udp -v mumble-data:/etc/mumble --name mumble-server phlak/mumble
+    docker run -d \
+      -p 64738:64738 \
+      -p 64738:64738/udp \
+      -v mumble-data:/etc/mumble \
+      --name mumble-server \
+      phlak/mumble
 
 
 #### Optional 'docker run' arguments
@@ -48,6 +53,20 @@ Get/Set the SuperUser Password
 After starting your container, you can get the randomly generated SuperUser password with:
 
     docker logs mumble-server 2>&1 | grep "Password for 'SuperUser'"
+
+**--- OR ---**
+
+Provide a SuperUser password using the `SUPERUSER_PASSWORD` environment variable:
+
+```
+    docker run -d \
+      -e SUPERUSER_PASSWORD=mysupersecurepassword
+      -p 64738:64738 \
+      -p 64738:64738/udp \
+      -v mumble-data:/etc/mumble \
+      --name mumble-server \
+      phlak/mumble
+```
 
 **--- OR ---**
 
