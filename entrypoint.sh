@@ -1,9 +1,9 @@
-#!/bin/sh
+#!/bin/bash
 
-if [[ ! "$SUPERUSER_PASSWORD" == "" ]]; then
-    /opt/mumble/murmur.x86 -fg -ini $CONFIG_PATH -supw $SUPERUSER_PASSWORD
+if [[ ! "${SUPERUSER_PASSWORD}" == "" ]]; then
+    /opt/mumble/murmur.x86 -fg -ini ${CONFIG_PATH} -supw ${SUPERUSER_PASSWORD}
     echo "Password for 'SuperUser' was set from environment variable"
     unset SUPERUSER_PASSWORD
 fi
 
-/opt/mumble/murmur.x86 "$@"
+exec $(echo "$@" | envsubst)
