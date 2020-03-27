@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/sh
 
 if [[ ! "${SUPERUSER_PASSWORD}" == "" ]]; then
     /opt/mumble/murmur.x86 -fg -ini ${CONFIG_PATH} -supw ${SUPERUSER_PASSWORD}
