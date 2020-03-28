@@ -38,6 +38,8 @@ After the data volume has been created run the server container with the named d
 
 #### Optional 'docker run' arguments
 
+`-e SUPERUSER_PASSWORD=password` - Set the superuser password for your server during container initialization.
+
 `-e TZ=America/Phoenix` - Set the timezone for your server. You can find your timezone in this
                           [list of timezones](https://goo.gl/uy1J6q). Use the (case sensitive)
                           value from the `TZ` column. If left unset, timezone will be UTC.
@@ -56,17 +58,7 @@ After starting your container, you can get the randomly generated SuperUser pass
 
 **--- OR ---**
 
-Provide a SuperUser password using the `SUPERUSER_PASSWORD` environment variable:
-
-```
-    docker run -d \
-      -e SUPERUSER_PASSWORD=mysupersecurepassword
-      -p 64738:64738 \
-      -p 64738:64738/udp \
-      -v mumble-data:/etc/mumble \
-      --name mumble-server \
-      phlak/mumble
-```
+Provide a SuperUser password using the `SUPERUSER_PASSWORD` environment variable, see [Optional arguments section](#optional-docker-run-arguments).
 
 **--- OR ---**
 

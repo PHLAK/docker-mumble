@@ -4,8 +4,7 @@ LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 # Define Mumble version
 ARG MUMBLE_VERSION=1.3.0
 
-ENV CONFIG_PATH=/etc/mumble/config.ini \
-    SUPERUSER_PASSWORD=
+ENV CONFIG_PATH=/etc/mumble/config.ini
 
 # Create Mumble directories
 RUN mkdir -pv /opt/mumble /etc/mumble
