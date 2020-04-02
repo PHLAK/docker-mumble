@@ -7,9 +7,8 @@ docker-mumble
 
 <p align="center">
   <a href="http://microbadger.com/#/images/phlak/mumble" alt="Microbadger"><img src="https://images.microbadger.com/badges/image/phlak/mumble.svg"></a>
-  <a href="https://ln.phlak.net/join-slack"><img src="https://img.shields.io/badge/Join_our-Slack-611f69.svg" alt="Join our"></a>
+  <a href="https://spectrum.chat/phlaknet"><img src="https://img.shields.io/badge/Join_the-Community-7b16ff.svg" alt="Join our Community"></a>
   <a href="https://github.com/users/PHLAK/sponsorship"><img src="https://img.shields.io/badge/Become_a-Sponsor-cc4195.svg" alt="Become a Sponsor"></a>
-  <a href="https://patreon.com/PHLAK"><img src="https://img.shields.io/badge/Become_a-Patron-e7513b.svg" alt="Become a Patron"></a>
   <a href="https://paypal.me/ChrisKankiewicz"><img src="https://img.shields.io/badge/Make_a-Donation-006bb6.svg" alt="One-time Donation"></a>
 </p>
 
@@ -31,7 +30,7 @@ After the data volume has been created run the server container with the named d
     docker run -d -p 64738:64738 -p 64738:64738/udp -v mumble-data:/etc/mumble --name mumble-server phlak/mumble
 
 
-#### Optional 'docker run' arguments
+#### Optional `docker run` arguments
 
 `-e SUPERUSER_PASSWORD=password` - Set the superuser password for your server during container initialization.
 
@@ -53,15 +52,15 @@ After starting your container, you can get the randomly generated SuperUser pass
 
 **--- OR ---**
 
-Provide a SuperUser password using the `SUPERUSER_PASSWORD` environment variable, see [Optional arguments section](#optional-docker-run-arguments).
-
-**--- OR ---**
-
 Manually set a new SuperUser password with:
 
     docker exec -it mumble-server supw
 
 **NOTE:** This can be run at any time to update the SuperUser password
+
+**--- OR ---**
+
+Provide a SuperUser password using the `SUPERUSER_PASSWORD` environment variable (see the [Optional `docker run` arguments](#optional-docker-run-arguments) section above).
 
 Edit the Config
 ---------------
@@ -77,7 +76,7 @@ After saving changes, restart your container:
 Troubleshooting
 ---------------
 
-For general help and support join our [Slack Workspace](https://ln.phlak.net/join-slack).
+For general help and support join our [Spectrum Community](https://spectrum.chat/phlaknet) or reach out on [Twitter](https://twitter.com/PHLAK).
 
 Please report bugs to the [GitHub Issue Tracker](https://github.com/PHLAK/docker-mumble/issues).
 
