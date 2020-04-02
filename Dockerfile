@@ -1,4 +1,4 @@
-FROM alpine:3.11
+FROM alpine:3.11.5
 LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 
 # Define Mumble version
