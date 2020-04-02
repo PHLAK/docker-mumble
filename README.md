@@ -32,16 +32,20 @@ After the data volume has been created run the server container with the named d
 
 #### Optional `docker run` arguments
 
-`-e SUPERUSER_PASSWORD=password` - Set the superuser password for your server during container initialization.
+<dl>
+    <dt><code>-e SUPERUSER_PASSWORD=password</code></dt>
+    <dd>Set the superuser password for your server during container initialization.</dd>
+</dl>
 
-`-e TZ=America/Phoenix` - Set the timezone for your server. You can find your timezone in this
-                          [list of timezones](https://goo.gl/uy1J6q). Use the (case sensitive)
-                          value from the `TZ` column. If left unset, timezone will be UTC.
+<dl>
+    <dt><code>-e TZ=America/Phoenix</code></dt>
+    <dd>Set the timezone for your server. You can find your timezone in this <a href="https://goo.gl/uy1J6q">list of timezones</a>. Use the (case sensitive) value from the <code>TZ</code> column. If left unset, timezone will be UTC.</dd>
+</dl>
 
-`--restart unless-stopped` - Always restart the container regardless of the exit status, but do not
-                             start it on daemon startup if the container has been put to a stopped
-                             state before. See the Docker [restart policies](https://goo.gl/Y0dlDH)
-                             for additional details.
+<dl>
+    <dt><code>--restart unless-stopped</code></dt>
+    <dd>Always restart the container regardless of the exit status, but do not start it on daemon startup if the container has been put to a stopped state before. See the Docker <a href="https://goo.gl/Y0dlDH">restart policies</a> for additional details.</dd>
+</dl>
 
 Get/Set the SuperUser Password
 ------------------------------
