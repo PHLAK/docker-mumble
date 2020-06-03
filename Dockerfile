@@ -3,6 +3,12 @@ LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 
 # Define Mumble version
 ARG MUMBLE_VERSION=1.3.0
+ARG USER=mumble
+ARG GROUP=mumble
+ARG PUID=64738
+ARG PGID=64738
+ARG TCP_PORT=64738
+ARG UDP_PORT=64738
 
 # Define environment variables
 ENV CONFIG_PATH=/etc/mumble/config.ini
@@ -11,7 +17,7 @@ ENV CONFIG_PATH=/etc/mumble/config.ini
 RUN mkdir -pv /opt/mumble /etc/mumble
 
 # Create non-root user
-RUN adduser -DHs /sbin/nologin mumble
+RUN addgroup -g "$PGID" -S "$GROUP" && adduser -u "$PUID" -G "$GROUP" -DHs /sbin/nologin "$USER"
 
 # Copy config file
 COPY files/config.ini /etc/mumble/config.ini
@@ -30,13 +36,13 @@ ARG BZIP_URL=https://github.com/mumble-voip/mumble/releases/download/${MUMBLE_VE
 RUN apk add --update ca-certificates bzip2 su-exec tar tzdata wget \
     && wget -qO- ${BZIP_URL} | tar -xjv --strip-components=1 -C /opt/mumble \
     && apk del ca-certificates bzip2 tar wget && rm -rf /var/cache/apk/* \
-    && chown -R mumble:mumble /etc/mumble /opt/mumble
+    && chown -R "$USER":"$GROUP" /etc/mumble /opt/mumble
 
 # Expose ports
-EXPOSE 64738 64738/udp
+EXPOSE $TCP_PORT $UDP_PORT/udp
 
 # Set running user
-USER mumble
+USER $USER
 
 # Set volumes
 VOLUME /etc/mumble
