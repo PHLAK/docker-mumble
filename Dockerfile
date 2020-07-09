@@ -2,7 +2,7 @@ FROM alpine:3.12.0
 LABEL maintainer="Chris Kankiewicz <Chris@ChrisKankiewicz.com>"
 
 # Define Mumble version
-ARG MUMBLE_VERSION=1.3.1
+ARG MUMBLE_VERSION=1.3.2
 
 # Define environment variables
 ENV CONFIG_PATH=/etc/mumble/config.ini
