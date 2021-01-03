@@ -23,7 +23,7 @@ RUN chmod +x /usr/local/bin/supw
 ARG BZIP_URL=https://github.com/mumble-voip/mumble/releases/download/${MUMBLE_VERSION}/murmur-static_x86-${MUMBLE_VERSION}.tar.bz2
 
 # Install dependencies, fetch Mumble bzip archive and chown files
-RUN apk add --update ca-certificates bzip2 tar tzdata wget \
+RUN apk add --no-cache ca-certificates bzip2 tar tzdata wget \
     && wget -qO- ${BZIP_URL} | tar -xjv --strip-components=1 -C /opt/mumble \
     && apk del ca-certificates bzip2 tar wget && rm -rf /var/cache/apk/* \
     && chown -R mumble-server:mumble-server /etc/mumble /opt/mumble
