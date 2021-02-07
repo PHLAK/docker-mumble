@@ -13,7 +13,7 @@ sed -i.bak 's;'WELCOMETEXT';'$WELCOMETEXT';g' /etc/mumble/config/mumble-server.i
 #sed -i.bak "/welcometext=/a\welcometextfile=$WELCOMETEXTFIlE" /etc/mumble/config/mumble-server.ini
 #sed -i.bak 's;welcometext="";welcometext=\"'$WELCOMETEXTFIlE'\";g' /etc/mumble/config/mumble-server.ini
 #sed -i.bak "s|welcometext=\"\"|welcometext=\"$welcome_text\"|" /etc/mumble/config/mumble-server.ini
-sed -i -e '/welcomemessage=""/{r '$WELCOMETEXTFIlE'' -e 'd}' /etc/mumble/config/mumble-server.ini
+sed -i -e '/welcometext=""/{r '$WELCOMETEXTFIlE'' -e 'd}' /etc/mumble/config/mumble-server.ini
 wait
 # start the server
 /opt/mumble/murmur.x86 -fg -ini /etc/mumble/config/mumble-server.ini
