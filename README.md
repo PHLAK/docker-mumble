@@ -12,8 +12,8 @@ docker-mumble
     <br>
     <a href="https://hub.docker.com/repository/docker/phlak/mumble/tags"><img alt="Docker Image Version" src="https://img.shields.io/docker/v/phlak/mumble?style=flat-square&sort=semver"></a>
     <a href="https://hub.docker.com/repository/docker/phlak/mumble"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/phlak/mumble?style=flat-square"></a>
+    <a href="https://hub.docker.com/repository/docker/phlak/mumble/builds"><img src="https://img.shields.io/docker/cloud/build/phlak/mumble?style=flat-square" alt="Docker Cloud Build Status"></a>
     <a href="https://github.com/PHLAK/docker-mumble/blob/master/LICENSE"><img src="https://img.shields.io/github/license/PHLAK/docker-mumble?style=flat-square" alt="License"></a>
-    <a href="https://hub.docker.com/repository/docker/phlak/mumble/builds"><img alt="Docker Build Status" src="https://img.shields.io/docker/build/phlak/mumble?style=flat-square"></a>
 </p>
 
 <p align="center">
