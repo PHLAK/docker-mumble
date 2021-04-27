@@ -1,0 +1,15 @@
+name: docker-mumble CI
+
+on: [push]
+
+jobs:
+  build-image:
+    name: Build Image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+        
+      - name: Build the Docker Image
+        run: docker build --tag phlak/docker-mumble:test .
