@@ -51,27 +51,22 @@ After the data volume has been created run the server container with the named d
     <dd>Always restart the container regardless of the exit status, but do not start it on daemon startup if the container has been put to a stopped state before. See the Docker <a href="https://goo.gl/Y0dlDH">restart policies</a> for additional details.</dd>
 </dl>
 
-Get/Set the SuperUser Password
-------------------------------
+SuperUser Password
+------------------
 
-After starting your container, you can get the randomly generated SuperUser password with:
-
-    docker logs mumble-server 2>&1 | grep "Password for 'SuperUser'"
-
-**--- OR ---**
-
-Manually set a new SuperUser password with:
+After starting your container, you can manually set a new SuperUser password with:
 
     docker exec -it mumble-server supw
 
-**NOTE:** This can be run at any time to update the SuperUser password
+> ℹ️ This can be run at any time to update the SuperUser password
 
-**--- OR ---**
+Or retrieve the randomly generated SuperUser password with:
 
-Provide a SuperUser password using the `SUPERUSER_PASSWORD` environment variable (see the [Optional `docker run` arguments](#optional-docker-run-arguments) section above).
+    docker logs mumble-server 2>&1 | grep "Password for 'SuperUser'"
+Alternatively you may provide a SuperUser password during container creation using the `SUPERUSER_PASSWORD` environment variable (see the [Optional `docker run` arguments](#optional-docker-run-arguments) section above).
 
-Edit the Config
----------------
+Configuration
+-------------
 
 Once you have a running container, you can edit the config with:
 
@@ -84,7 +79,7 @@ After saving changes, restart your container:
 Troubleshooting
 ---------------
 
-For general help and support join our [Spectrum Community](https://spectrum.chat/phlaknet) or reach out on [Twitter](https://twitter.com/PHLAK).
+For general help and support join our [GitHub Discussions](https://github.com/PHLAK/docker-mumble/discussions) or reach out on [Twitter](https://twitter.com/PHLAK).
 
 Please report bugs to the [GitHub Issue Tracker](https://github.com/PHLAK/docker-mumble/issues).
 
