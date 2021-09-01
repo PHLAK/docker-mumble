@@ -4,14 +4,13 @@ on:
   push:
     branches: ['master']
     tags: ['*']
-  pull_request:
-    branches: ['master']
 
 env:
   DOCKER_HUB_USER: phlak
 
 jobs:
-  build-container:
+  build-and-publish-image:
+    name: Build & Publish Image
     runs-on: ubuntu-latest
 
     steps:

@@ -1,0 +1,15 @@
+name: Test Build
+
+on: [pull_request_target]
+
+jobs:
+  build-image:
+    name: Build Image
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+
+      - name: Build Image
+        run: make build
