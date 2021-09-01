@@ -9,8 +9,8 @@ env:
   DOCKER_HUB_USER: phlak
 
 jobs:
-  build-and-publish-image:
-    name: Build & Publish Image
+  build-and-push:
+    name: Build & Push
     runs-on: ubuntu-latest
 
     steps:
