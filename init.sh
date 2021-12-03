@@ -16,4 +16,4 @@ sed -i.bak 's;'WELCOMETEXT';'$WELCOMETEXT';g' /etc/mumble/config/mumble-server.i
 sed -i -e '/welcometext=""/{r '$WELCOMETEXTFIlE'' -e 'd}' /etc/mumble/config/mumble-server.ini
 wait
 # start the server
-/opt/mumble/murmur.x86 -fg -ini /etc/mumble/config/mumble-server.ini -supw $SUPERUSERPW
+/opt/mumble/murmur.x86 -fg -ini /etc/mumble/config/mumble-server.ini
