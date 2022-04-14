@@ -13,7 +13,7 @@ RUN apk add apk add --no-cache \
 RUN adduser -DHs /sbin/nologin mumble-server
 
 # Copy config file
-ADD config/mumble-server.ini /etc/murmur.ini
+ADD config/mumble-server.ini /etc/murmur/murmur.ini
 
 # Expose ports
 EXPOSE 64738 64738/udp
@@ -23,7 +23,7 @@ COPY /init.sh /
 USER mumble-server
 
 # Set volumes
-VOLUME /etc/mumble
+VOLUME /etc/murmur
 
 # Default command
 CMD ["/init.sh"]
