@@ -51,6 +51,8 @@ After the data volume has been created run the server container with the named d
     <dd>Always restart the container regardless of the exit status, but do not start it on daemon startup if the container has been put to a stopped state before. See the Docker <a href="https://goo.gl/Y0dlDH">restart policies</a> for additional details.</dd>
 </dl>
 
+See also the [docker-compose.yml](docker-compose.yml) file, if you want to use [Docker compose](https://docs.docker.com/compose/).
+
 SuperUser Password
 ------------------
 

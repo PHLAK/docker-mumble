@@ -1,0 +1,19 @@
+version: '3.3'
+
+services:
+  mumble:
+    image: phlak/mumble
+    restart: always
+    container_name: mumble
+    environment:
+      #- SUPERUSER_PASSWORD=secretpass
+      - TZ=Europe/Amsterdam
+    volumes:
+      - mumble-data:/etc/mumble
+    ports:
+      - "64738:64738"
+      - "64738:64738/udp"
+
+volumes:
+  mumble-data:
+    external: true
